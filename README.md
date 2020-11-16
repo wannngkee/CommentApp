@@ -1,9 +1,9 @@
 # Comment page
 
-write comment and submit
+\*write comment and submit
 
-show comment submitting history
+\*show comment submitting history
 
-delete existing comment in the list
+\*delete existing comment in the list
 
-save the user name and content in the local storage
+\*save the user name and content in the local storage

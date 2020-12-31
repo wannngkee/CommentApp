@@ -4,9 +4,9 @@ const ADD_COMMENT = "ADD_COMMENT";
 const DELETE_COMMENT = "DELETE_COMMENT";
 
 //reducer
-export default function (state, action) {
+export default function reducer(state, action) {
   if (!state) {
-    state = { comment: [] };
+    state = { comments: [] };
   }
   switch (action.types) {
     case INIT_COMMENTS:

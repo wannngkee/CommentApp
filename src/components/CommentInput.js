@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import CommentList from "./CommentList";
 
 export default class CommentInput extends Component {
   static propTypes = {
@@ -11,13 +10,13 @@ export default class CommentInput extends Component {
 
   static defaultProps = {
     username: "",
+    content: "",
   };
 
   constructor(props) {
     super(props);
     this.state = {
       username: props.username,
-      content: "",
     };
   }
 
@@ -85,7 +84,3 @@ export default class CommentInput extends Component {
     );
   }
 }
-
-CommentList.propTypes = {
-  onSubmit: PropTypes.func,
-};

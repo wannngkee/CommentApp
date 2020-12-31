@@ -2,25 +2,29 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import CommentList from "./CommentList";
 
-class CommentInput extends Component {
-  constructor() {
-    super();
+export default class CommentInput extends Component {
+  static propTypes = {
+    username: PropTypes.any,
+    onSubmit: PropTypes.func,
+    onUserNameInputBlur: PropTypes.func,
+  };
+
+  static defaultProps = {
+    username: "",
+  };
+
+  constructor(props) {
+    super(props);
     this.state = {
-      username: "",
+      username: props.username,
       content: "",
     };
   }
 
-  //focus on the content area automatically and return the username in the local storage
+  //focus on the content area automatically
   componentDidMount() {
     this.textarea.focus();
-    this._loadUsername();
   }
-
-  // //render the username in the local storage
-  // UNSAFE_componentWillMount = () => {
-  //   this._loadUsername();
-  // };
 
   handleUsernameChange = (e) => {
     this.setState({
@@ -45,21 +49,11 @@ class CommentInput extends Component {
     this.setState({ content: "" });
   };
 
-  //private function
-  _saveUsername(username) {
-    localStorage.setItem("username", username);
-  }
-
   handleUsernameBlur = (e) => {
-    this._saveUsername(e.target.value);
-  };
-
-  _loadUsername() {
-    const username = localStorage.getItem("username");
-    if (username) {
-      this.setState({ username });
+    if (this.props.onUserNameInputBlur) {
+      this.props.onUserNameInputBlur(e.target.value);
     }
-  }
+  };
 
   render() {
     return (
@@ -95,5 +89,3 @@ class CommentInput extends Component {
 CommentList.propTypes = {
   onSubmit: PropTypes.func,
 };
-
-export default CommentInput;

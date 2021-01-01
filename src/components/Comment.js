@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-class Comment extends Component {
+export default class Comment extends Component {
   constructor() {
     super();
     this.state = { timeString: "" };
@@ -54,5 +54,3 @@ Comment.propTypes = {
   onDeleteComment: PropTypes.func,
   index: PropTypes.number,
 };
-
-export default Comment;

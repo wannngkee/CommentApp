@@ -8,7 +8,7 @@ export default function reducer(state, action) {
   if (!state) {
     state = { comments: [] };
   }
-  switch (action.types) {
+  switch (action.type) {
     case INIT_COMMENTS:
       return { comments: action.comments };
     case ADD_COMMENT:

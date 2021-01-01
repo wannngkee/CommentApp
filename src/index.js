@@ -10,11 +10,9 @@ import reportWebVitals from "./reportWebVitals";
 const store = createStore(commentsReducer);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <CommentApp />
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <CommentApp />
+  </Provider>,
   document.getElementById("root")
 );
 

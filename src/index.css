@@ -16,7 +16,7 @@ body {
   padding: 20px;
 }
 
-/* 评论框样式 */
+/* comment input box style */
 .comment-input {
   background-color: #fff;
   border: 1px solid #f1f1f1;
@@ -75,14 +75,14 @@ body {
   background: #13c1f1;
 }
 
-/* 评论列表样式 */
+/* comment list style */
 .comment-list {
   background-color: #fff;
   border: 1px solid #f1f1f1;
   padding: 20px;
 }
 
-/* 评论组件样式 */
+/* comment component style */
 .comment {
   position: relative;
   display: flex;
